@@ -1,11 +1,34 @@
-import { useState } from "react";
-import BaseLayout from "./layouts/BaseLayout";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
+import HomePage from "./pages/HomePage";
+import CoinsPage from "./pages/CoinsPage";
+import NewsPage from "./pages/NewsPage";
+import About from "./pages/About";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePage />,
+  },
+  {
+    path: "/coins",
+    element: <CoinsPage />,
+  },
+  {
+    path: "/news",
+    element: <NewsPage />,
+  },
+  {
+    path: "/about",
+    element: <About />,
+  },
+]);
 
 function App() {
   return (
-    <BaseLayout>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    </BaseLayout>
+    <div className="App">
+      <RouterProvider router={router} />
+    </div>
   );
 }
 
