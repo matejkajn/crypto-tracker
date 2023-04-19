@@ -4,11 +4,13 @@ import HomePage from "./pages/HomePage";
 import CoinsPage from "./pages/CoinsPage";
 import NewsPage from "./pages/NewsPage";
 import About from "./pages/About";
+import ErrorPage from "./pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomePage />,
+    errorElement: <ErrorPage />,
   },
   {
     path: "/coins",
