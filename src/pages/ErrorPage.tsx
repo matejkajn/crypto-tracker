@@ -6,7 +6,7 @@ const ErrorPage = () => {
 
   return (
     <BaseLayout>
-      <div className="flex flex-col text-center justify-center items-center h-[80vh]">
+      <div className="flex flex-col text-center justify-center items-center h-[calc(100vh-116px)]">
         <div className="text-indigo-500 font-bold text-7xl">404</div>
 
         <div className="font-bold text-3xl xl:text-7xl lg:text-6xl md:text-5xl mt-10">
@@ -17,15 +17,15 @@ const ErrorPage = () => {
           The page you are looking for could not be found.
         </div>
         <div className="flex">
-          <div className="text-indigo-500 m-4 cursor-pointer underline">
+          <a className="font-semibold text-indigo-500 dark:text-blue-500 hover:underline m-4 cursor-pointer">
             <NavLink to="/">Homepage</NavLink>
-          </div>
-          <div
-            className="text-indigo-500 m-4 cursor-pointer underline"
+          </a>
+          <a
+            className="font-semibold text-indigo-500 m-4 hover:underline cursor-pointer"
             onClick={() => navigate(-1)}
           >
             Go back
-          </div>
+          </a>
         </div>
       </div>
     </BaseLayout>
