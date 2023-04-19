@@ -4,7 +4,21 @@ export default {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: [
+        'font-family',
+        'Inter',
+        '-apple-system',
+        'BlinkMacSystemFont',
+        'segoe ui',
+        'Roboto',
+        'Helvetica',
+        'Arial',
+        'sans-serif'
+      ]
+      }
+    },
   },
   plugins: [],
 }
