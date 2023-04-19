@@ -10,7 +10,7 @@ const BaseLayout = ({ children }: Props) => {
   return (
     <>
       <Navbar />
-      <main>{children}</main>
+      <main className="w-[85%] m-auto">{children}</main>
       <Footer />
     </>
   );
