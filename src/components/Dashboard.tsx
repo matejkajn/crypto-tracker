@@ -11,8 +11,6 @@ import { ClockIcon } from "@heroicons/react/24/solid";
 
 import millify from "millify";
 
-import HomePageGraph from "./HomePageGraph";
-
 const Dashboard = () => {
   const [loading, data, error] = useGeneralStats<GeneralStats>();
 
@@ -22,15 +20,6 @@ const Dashboard = () => {
 
   for (const key in data?.data.total_market_cap) {
     sumMarketCap = sumMarketCap + data?.data.total_market_cap[key];
-  }
-
-  const marketCapPercentageArrayCodes = [];
-  const marketCapPercentageArrayPercentage = [];
-  for (const key in data?.data.market_cap_percentage) {
-    marketCapPercentageArrayCodes.push(key.toUpperCase());
-    marketCapPercentageArrayPercentage.push(
-      data?.data.market_cap_percentage[key]
-    );
   }
 
   return (
@@ -67,11 +56,6 @@ const Dashboard = () => {
           loading={loading}
         />
       </div>
-      <HomePageGraph
-        labels={marketCapPercentageArrayCodes}
-        percentages={marketCapPercentageArrayPercentage}
-        loading={loading}
-      />
     </div>
   );
 };
