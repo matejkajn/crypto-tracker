@@ -1,11 +1,10 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 
-const options = {
+  const options = {
     method: 'GET',
-    url: 'https://coingecko.p.rapidapi.com/global',
+    url: import.meta.env.VITE_RAPID_API_GLOBAL_STATS_URL,
     headers: {
-      'content-type': 'application/octet-stream',
       'X-RapidAPI-Key': import.meta.env.VITE_RAPID_API_KEY,
       'X-RapidAPI-Host': import.meta.env.VITE_RAPID_API_HOST
     }

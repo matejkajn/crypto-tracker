@@ -12,8 +12,8 @@ const DashboardBlock = ({ title, value, icon, loading }: Props) => {
     <div
       className={
         loading
-          ? "w-full lg:w-6/12 xl:w-3/12 p-2 animate-pulse"
-          : "w-full lg:w-6/12 xl:w-3/12 p-2"
+          ? "w-full lg:w-6/12 xl:w-4/12 p-2 animate-pulse"
+          : "w-full lg:w-6/12 xl:w-4/12 p-2"
       }
     >
       <div className="relative flex flex-col min-w-0 break-words bg-white rounded-lg mb-6 xl:mb-0 shadow-lg">
