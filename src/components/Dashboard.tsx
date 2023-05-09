@@ -11,7 +11,7 @@ import { ClockIcon } from "@heroicons/react/24/solid";
 
 import millify from "millify";
 
-import HompageGraph from "./HompageGraph";
+import HomePageGraph from "./HomePageGraph";
 
 const Dashboard = () => {
   const [loading, data, error] = useGeneralStats<GeneralStats>();
@@ -67,7 +67,7 @@ const Dashboard = () => {
           loading={loading}
         />
       </div>
-      <HompageGraph
+      <HomePageGraph
         labels={marketCapPercentageArrayCodes}
         percentages={marketCapPercentageArrayPercentage}
         loading={loading}
