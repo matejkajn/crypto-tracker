@@ -1,11 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useGetCurrencies } from "../hooks/usetGetCurrencies";
 import { Currencies, Currency } from "../types/types";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import CurrencyBlock from "./CurrencyBlock";
+import { CurrencyContext } from "./CurrencyContextProvider";
 
 const CurrencyPopUp = () => {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
+
+  const { currency } = useContext(CurrencyContext);
 
   const [loading, data, error] = useGetCurrencies<Currencies>();
 
@@ -27,7 +30,7 @@ const CurrencyPopUp = () => {
         className="text-md px-2 my-auto rounded-full bg-indigo-500 text-white cursor-pointer"
         onClick={() => setModalOpen(true)}
       >
-        EUR
+        {currency.symbol}
       </div>
       {modalOpen ? (
         <>

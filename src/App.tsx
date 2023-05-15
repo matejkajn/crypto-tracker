@@ -6,6 +6,8 @@ import NewsPage from "./pages/NewsPage";
 import About from "./pages/About";
 import ErrorPage from "./pages/ErrorPage";
 
+import CurrencyContextProvider from "./components/CurrencyContextProvider";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -29,7 +31,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <div className="App">
-      <RouterProvider router={router} />
+      <CurrencyContextProvider>
+        <RouterProvider router={router} />
+      </CurrencyContextProvider>
     </div>
   );
 }
