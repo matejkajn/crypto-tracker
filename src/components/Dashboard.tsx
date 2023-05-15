@@ -15,13 +15,13 @@ import millify from "millify";
 const Dashboard = () => {
   const [loading, data, error] = useGeneralStats<GeneralStats>();
 
-  if (error) return <div>Nějaký error</div>;
+  if (error) throw new Error("There was a problem while obtaining data.");
 
   return (
     <div className="m-5">
-      <div className="text-indigo-500 font-bold text-4xl text-center p-10">
+      <h1 className="text-indigo-500 font-bold text-4xl text-center p-10">
         General crypto stats
-      </div>
+      </h1>
       <div className="flex flex-wrap justify-center">
         <DashboardBlock
           title="Total Coins"
