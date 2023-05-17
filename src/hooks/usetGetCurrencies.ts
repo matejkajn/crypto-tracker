@@ -8,8 +8,8 @@ const options = {
     limit: '60',
   },
   headers: {
-    'X-RapidAPI-Key': import.meta.env.VITE_RAPID_API_KEY,
-    'X-RapidAPI-Host': import.meta.env.VITE_RAPID_API_HOST
+      'X-RapidAPI-Key': import.meta.env.VITE_RAPID_API_KEY,
+      'X-RapidAPI-Host': import.meta.env.VITE_RAPID_API_HOST
   }
 };
 
@@ -20,7 +20,7 @@ export const useGetCurrencies = <Currencies>():[boolean, Currencies | undefined,
 
     useEffect(() => {
       sendRequest()
-  }, [])
+    }, [])
 
   const sendRequest = () => {
       setLoading(true)

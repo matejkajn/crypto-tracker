@@ -27,3 +27,32 @@ export type Currency = {
     symbol: string,
     sign: string | null
 }
+
+export type Coins = {
+    status: string,
+    data: {
+        stats: string,
+        coins: Coin[]
+    }
+}
+
+export type Coin = {
+    uuid: string,
+    symbol: string,
+    name: string,
+    color: string,
+    iconUrl: string,
+    marketCap: string,
+    price: string,
+    listedAt: number,
+    tier: number,
+    change: string,
+    rank: number,
+    sparkline: {
+        [key: string]: string
+    }
+    lowVolume: boolean,
+    coinrankingUrl: string,
+    dayVolume: string,
+    btcPrice: string
+}
