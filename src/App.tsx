@@ -7,6 +7,7 @@ import About from "./pages/About";
 import ErrorPage from "./pages/ErrorPage";
 
 import CurrencyContextProvider from "./components/CurrencyContextProvider";
+import CoinPage from "./pages/CoinPage";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
     path: "/about",
     element: <About />,
   },
+  { path: "/coins/:name", element: <CoinPage /> },
 ]);
 
 function App() {
