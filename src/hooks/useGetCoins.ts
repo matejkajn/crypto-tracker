@@ -17,7 +17,7 @@ export const useGetCoins = <Coins>({ limit = 300, offset = 0 } : Props):[boolean
         url: import.meta.env.VITE_RAPID_API_COINS_URL,
         params: {
           referenceCurrencyUuid: currency.uuid,
-          timePeriod: '24h',
+          timePeriod: '7d',
           orderBy: 'marketCap',
           orderDirection: 'desc',
           limit: limit,

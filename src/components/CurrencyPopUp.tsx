@@ -12,8 +12,8 @@ const CurrencyPopUp = () => {
 
   const [loading, data, error] = useGetCurrencies<Currencies>();
 
-  const [currencies, setCurrencies] = useState<Currency[] | undefined>([]);
   const [filterTerm, setFilterTerm] = useState<string>("");
+  const [currencies, setCurrencies] = useState<Currency[] | undefined>([]);
 
   if (error) throw new Error("There was an error while loading currencies.");
 
