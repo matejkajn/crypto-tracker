@@ -23,8 +23,6 @@ const ErrorPage = () => {
   const error = useRouteError();
   const navigate = useNavigate();
 
-  console.log(error);
-
   return (
     <BaseLayout>
       <div className="flex flex-col text-center justify-center items-center h-[calc(100vh-116px)]">
