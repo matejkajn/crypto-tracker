@@ -43,31 +43,33 @@ const CoinsTable = () => {
       </div> */}
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg my-2">
         <table className="w-full text-sm text-left  dark:text-gray-400">
-          <thead className="text-xs bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-            <tr>
-              <th scope="col" className="px-6 py-3">
-                #
-              </th>
-              <th scope="col" className="px-6 py-3">
-                Name
-              </th>
-              <th scope="col" className="px-6 py-3">
-                Price
-              </th>
-              <th scope="col" className="px-6 py-3">
-                BTC Price
-              </th>
-              <th scope="col" className="px-6 py-3">
-                Change
-              </th>
-              <th scope="col" className="px-6 py-3">
-                24h Vol.
-              </th>
-              <th scope="col" className="px-6 py-3">
-                Last 7 days
-              </th>
-            </tr>
-          </thead>
+          {!loading && (
+            <thead className="text-xs bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+              <tr>
+                <th scope="col" className="px-6 py-3">
+                  #
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Name
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Price
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  BTC Price
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Change
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  24h Vol.
+                </th>
+                <th scope="col" className="px-6 py-3">
+                  Last 7 days
+                </th>
+              </tr>
+            </thead>
+          )}
           <tbody>
             {displayCoins?.map((coin) => (
               <CoinsTableRow
@@ -94,15 +96,17 @@ const CoinsTable = () => {
           </tbody>
         </table>
       </div>
-      <ReactPaginate
-        previousLabel={"<"}
-        nextLabel={">"}
-        pageCount={pageCount}
-        onPageChange={changePage}
-        containerClassName={"flex w-[500px] my-10 mx-auto justify-center"}
-        activeLinkClassName={"text-white bg-indigo-500"}
-        pageLinkClassName={"p-2 m-1 rounded-md"}
-      />
+      {!loading && (
+        <ReactPaginate
+          previousLabel={"<"}
+          nextLabel={">"}
+          pageCount={pageCount}
+          onPageChange={changePage}
+          containerClassName={"flex w-[500px] my-10 mx-auto justify-center"}
+          activeLinkClassName={"text-white bg-indigo-500"}
+          pageLinkClassName={"p-2 m-1 rounded-md"}
+        />
+      )}
     </>
   );
 };
