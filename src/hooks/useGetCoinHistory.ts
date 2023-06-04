@@ -1,26 +1,22 @@
-import axios from "axios"
 import { useContext, useEffect, useState } from "react"
 import { CurrencyContext } from "../components/CurrencyContextProvider"
+import axios from "axios"
 
 type Props = {
-    offset?: number,
-    limit?: number
+    uuid: string,
+    timePeriod: string
 }
 
-export const useGetCoins = <Coins>({ limit = 300, offset = 0 } : Props):[boolean, Coins | undefined, any] => {
-
-    const { currency } = useContext(CurrencyContext);
+export const useGetCoinHistory = <CoinHistory>({ uuid, timePeriod } : Props):[boolean, CoinHistory | undefined, any] => {
+    
+    const { currency } = useContext(CurrencyContext)
 
     const options = {
         method: 'GET',
-        url: import.meta.env.VITE_RAPID_API_COINS_URL,
+        url: import.meta.env.VITE_RAPID_API_COIN_URL + uuid + "/history",
         params: {
-          referenceCurrencyUuid: currency.uuid,
-          timePeriod: '7d',
-          orderBy: 'marketCap',
-          orderDirection: 'desc',
-          limit: limit,
-          offset: offset
+        referenceCurrencyUuid: currency.uuid,
+        timePeriod: timePeriod
         },
         headers: {
             'X-RapidAPI-Key': import.meta.env.VITE_RAPID_API_KEY,
@@ -28,9 +24,8 @@ export const useGetCoins = <Coins>({ limit = 300, offset = 0 } : Props):[boolean
         }
     };
 
-
     const [loading, setLoading] = useState<boolean>(true)
-    const [data, setData] = useState<Coins>()
+    const [data, setData] = useState<CoinHistory>()
     const [error, setError] = useState<any>()
 
     useEffect(() => {
@@ -47,7 +42,7 @@ export const useGetCoins = <Coins>({ limit = 300, offset = 0 } : Props):[boolean
             .catch((err) => {
                 setError(err)
             })
-            .finally(() => setLoading(false))
+            .finally(() => () => setLoading(false))
     }
 
     return [loading, data, error ]

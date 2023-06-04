@@ -29,7 +29,7 @@ export const useGeneralStats = <GeneralStats>():[boolean, GeneralStats | undefin
             .catch((err) => {
                 setError(err)
             })
-            .finally(() => setTimeout(() => setLoading(false), 1500))
+            .finally(() => setLoading(false))
     }
 
     return [loading, data, error ]

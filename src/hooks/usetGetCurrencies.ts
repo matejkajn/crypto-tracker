@@ -32,7 +32,7 @@ export const useGetCurrencies = <Currencies>():[boolean, Currencies | undefined,
           .catch((err) => {
               setError(err)
           })
-          .finally(() => setTimeout(() => setLoading(false), 1500))
+          .finally(() => setLoading(false))
   }
 
   return [loading, data, error ]
