@@ -11,13 +11,14 @@
   "dependencies": {
     "@heroicons/react": "^2.0.17",
     "axios": "^1.3.5",
+    "chart.js": "^4.3.0",
     "framer-motion": "^10.12.4",
     "millify": "^6.1.0",
     "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
     "react-paginate": "^8.2.0",
-    "react-router-dom": "^6.10.0",
-    "recharts": "^2.6.2"
+    "react-router-dom": "^6.10.0"
   },
   "devDependencies": {
     "@types/node": "^18.15.12",
