@@ -61,12 +61,6 @@ const CoinsTable = () => {
                 <th scope="col" className="px-6 py-3">
                   Change
                 </th>
-                <th scope="col" className="px-6 py-3">
-                  24h Vol.
-                </th>
-                <th scope="col" className="px-6 py-3">
-                  Last 7 days
-                </th>
               </tr>
             </thead>
           )}

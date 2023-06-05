@@ -46,9 +46,6 @@ const CoinsTableRow = ({ loading, ...props }: Props) => {
       >
         {props.change + "%"}
       </td>
-      {/* <td className="px-6 py-4">{props.dayVolume + "%"}</td> */}
-      <td className="px-6 py-4"></td>
-      <td className="px-6 py-4"></td>
     </tr>
   ) : (
     <tr
@@ -56,8 +53,6 @@ const CoinsTableRow = ({ loading, ...props }: Props) => {
         props.rank % 2 == 0 ? "bg-gray-200" : "bg-gray-300"
       }`}
     >
-      <td></td>
-      <td></td>
       <td></td>
       <td></td>
       <td></td>
