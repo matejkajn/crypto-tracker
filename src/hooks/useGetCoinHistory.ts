@@ -42,7 +42,7 @@ export const useGetCoinHistory = <CoinHistory>({ uuid, timePeriod } : Props):[bo
             .catch((err) => {
                 setError(err)
             })
-            .finally(() => () => setLoading(false))
+            .finally(() => setLoading(false))
     }
 
     return [loading, data, error ]

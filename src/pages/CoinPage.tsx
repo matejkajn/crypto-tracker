@@ -53,7 +53,7 @@ const CoinPage = () => {
           </div>
         </div>
         <div className="mt-[80px] p-4 text-center">{coin?.description}</div>
-        <div className="w-4/5 mx-auto p-10">
+        <div className="mx-auto">
           <CoinHistoryGraph graphColor={coin?.color} />
         </div>
         {coin?.websiteUrl !== null && (
