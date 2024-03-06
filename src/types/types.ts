@@ -1,3 +1,5 @@
+import { describe } from "node:test"
+
 export type GeneralStats = {
     status: string,
     data: {
@@ -117,3 +119,20 @@ export type CoinHistoryGraphPoint = {
     price: string,
     timestamp: number,
 }
+
+export type CoinNews = {
+    status: string,
+    data: {
+        stats: string,
+        news: CoinNew[]
+    }
+}
+
+export type CoinNew = {
+    url: string,
+    title: string,
+    description: string,
+    thumbnail: string,
+    createdAt: string
+}
+
