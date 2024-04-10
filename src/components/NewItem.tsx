@@ -1,4 +1,3 @@
-import React from "react";
 import { CoinNew } from "../types/types";
 
 type Props = CoinNew & {

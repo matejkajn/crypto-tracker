@@ -53,13 +53,6 @@ const Dashboard = () => {
           icon={<ClockIcon />}
           loading={loading}
         />
-        {/* <DashboardBlock
-          title="Market Cap"
-          value={Math.round((sumMarketCap as number) / 1000000000)}
-          icon={<BanknotesIcon />}
-          loading={loading}
-        />
-         */}
       </div>
     </div>
   );

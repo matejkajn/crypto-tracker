@@ -1,5 +1,3 @@
-import { StarIcon as StarIconSolid } from "@heroicons/react/24/solid";
-import { StarIcon as StarIconOutline } from "@heroicons/react/24/outline";
 import { Coin } from "../types/types";
 import { useContext } from "react";
 import { CurrencyContext } from "./CurrencyContextProvider";
@@ -19,7 +17,6 @@ const CoinsTableRow = ({ loading, ...props }: Props) => {
   return !loading ? (
     <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 leading-[45px]">
       <th scope="row" className="px-6 py-4 whitespace-nowrap dark:text-white">
-        {/* <StarIconOutline width={15} height={15} className="mx-1" /> */}
         <span>{props.rank}</span>
       </th>
       <td className="px-6 py-4 font-bold">
