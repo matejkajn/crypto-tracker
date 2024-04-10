@@ -3,7 +3,6 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import CoinsPage from "./pages/CoinsPage";
 import NewsPage from "./pages/NewsPage";
-import About from "./pages/About";
 import ErrorPage from "./pages/ErrorPage";
 
 import CurrencyContextProvider from "./components/CurrencyContextProvider";
@@ -22,10 +21,6 @@ const router = createBrowserRouter([
   {
     path: "/news",
     element: <NewsPage />,
-  },
-  {
-    path: "/about",
-    element: <About />,
   },
   { path: "/coins/:name", element: <CoinPage /> },
 ]);

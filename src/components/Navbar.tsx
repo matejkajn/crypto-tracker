@@ -19,9 +19,6 @@ const Navbar = () => {
         <li className="text-xl m-4 hover:text-indigo-500 cursor-pointer">
           <NavLink to="/news">News</NavLink>
         </li>
-        <li className="text-xl m-4 hover:text-indigo-500 cursor-pointer">
-          <NavLink to="/about">About</NavLink>
-        </li>
         <li className="items-center flex">
           <CurrencyPopUp />
         </li>
