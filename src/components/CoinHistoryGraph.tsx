@@ -65,11 +65,14 @@ const CoinHistoryGraph = ({ graphColor = "#000000" }: Props) => {
     throw new Error("There was a problem while obtaining coin history data.");
 
   const graphData: CoinHistoryGraphPoint[] = [];
-  for (const key in data?.data.history) {
-    graphData.push({
-      price: data?.data.history[parseInt(key)].price,
-      timestamp: data?.data.history[parseInt(key)].timestamp,
-    });
+
+  if (data != null) {
+    for (const key in data?.data.history) {
+      graphData.push({
+        price: data.data.history[parseInt(key)].price,
+        timestamp: data.data.history[parseInt(key)].timestamp,
+      });
+    }
   }
 
   return (
