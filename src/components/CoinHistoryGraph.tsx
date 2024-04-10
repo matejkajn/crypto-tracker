@@ -50,16 +50,16 @@ const CoinHistoryGraph = ({ graphColor = "#000000" }: Props) => {
   const { state } = useLocation();
   const { currency } = useContext(CurrencyContext);
 
-  const [timePeriod, setTimePeriod] = useState<string>(chartDays[0].value);
-
-  //const [fetchData, setFetchData] = useState<CoinHistory>()
+  const [timePeriod, setTimePeriod] = useState<string>(chartDays[5].value);
 
   const [loading, data, error] = useGetCoinHistory<CoinHistory>({
     uuid: state.uuid,
     timePeriod: timePeriod,
   });
 
-  useEffect(() => {}, [timePeriod, data]);
+  useEffect(() => {
+    //TODO
+  }, [timePeriod]);
 
   if (error)
     throw new Error("There was a problem while obtaining coin history data.");
@@ -74,24 +74,25 @@ const CoinHistoryGraph = ({ graphColor = "#000000" }: Props) => {
 
   return (
     <>
-      <div className="flex justify-center mx-auto my-5">
-        <select
-          id="selTimePeriod"
-          className="bg-gray-50 border w-2/12 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          defaultValue={timePeriod}
-          onChange={(e) => {
-            setTimePeriod(e.target.value);
-            console.log(e.target.value);
-          }}
-        >
-          ``
-          {chartDays.map((day) => (
-            <option key={day.value} value={day.value}>
-              {day.label}
-            </option>
-          ))}
-        </select>
-      </div>
+      {false && (
+        <div className="flex justify-center mx-auto my-5">
+          <select
+            id="selTimePeriod"
+            className="bg-gray-50 border w-2/12 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            defaultValue={timePeriod}
+            onChange={(e) => {
+              setTimePeriod(e.target.value);
+            }}
+          >
+            ``
+            {chartDays.map((day) => (
+              <option key={day.value} value={day.value}>
+                {day.label}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
       <Line
         ref={ref}
         data={{
