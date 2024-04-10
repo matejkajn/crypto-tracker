@@ -122,10 +122,8 @@ export type CoinHistoryGraphPoint = {
 
 export type CoinNews = {
     status: string,
-    data: {
-        stats: string,
-        news: CoinNew[]
-    }
+    data: CoinNew[]
+    
 }
 
 export type CoinNew = {
